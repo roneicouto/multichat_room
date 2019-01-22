@@ -12,6 +12,12 @@ module.exports.iniciaChat = function (application, req, res) {
        res.render('vs_index', {validacao : erros});
        return;   //qndo é SEND o metodo, não precisa desse return, os demais é necessário, aqui por padrão!
    }
+//.EMIT porque aqui o servidor está ENVIANDO/EXECUTANDO algo para os clientes
+   application.get('io').emit(
+                            'msgParaCliente',
+                            {apelido : dadosForm.apelido, mensagem: ' acabou de entrar no chat'});  
 
-   res.render('vs_chat');
+   res.render('vs_chat', 
+              {dadosForm : dadosForm}
+              );
 }
