@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/roneicouto/multichat_room/issues"
   },
-  "homepage": "https://github.com/roneicouto/multichat_room#readme"
+  "homepage": "https://github.com/roneicouto/multichat_room#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "consign": "^0.1.6",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1"
+  }
 }
