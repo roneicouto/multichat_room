@@ -58,11 +58,15 @@
 				<div class="collapse navbar-collapse" id="navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li>
+							<a href="/" id="home">HOME</a>
+						</li>
+						<li>
 							<a href="#" id="exibe_chat">Chat</a>
 						</li>
 						<li>
 							<a href="#" id="exibe_participantes">Participantes</a>
 						</li>
+
 					</ul>
 				</div>
 			</div>
@@ -120,9 +124,10 @@
 						apelido_atualizado_nos_clientes : $('#apelido_atualizado_nos_clientes').val()}
 
 					);
-					$('apelido_atualizado_nos_clientes').val(1);
-					$('mensagem').val("");
+					$('#apelido_atualizado_nos_clientes').val(1);
+					$('#mensagem').val("");
 				});
+
 
 				// socket.on onde ele está ESCUTANDO o servidor
 				socket.on('msgParaCliente',function (callbackDoServidor) {
@@ -136,7 +141,7 @@
 					window.scrollTo(0,document.body.scrollHeight);						
 				});
 				//socket.on para os participantes
-				socket.on('msgParaCliente',function (callbackDoServidor) {
+				socket.on('ParticipantesParaCliente',function (callbackDoServidor) {
 					var htmlP = '';
 						htmlP += '<span class="pessoasParticipantes" >';
 							htmlP += '<img src="images/ico_usuario.png" />'+callbackDoServidor.apelido;
